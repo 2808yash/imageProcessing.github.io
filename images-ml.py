@@ -1,9 +1,11 @@
 import streamlit as st
 import cv2
 import numpy as np
+import io
 from PIL import Image
 st.title("Image Processing using OpenCV")
 img=st.file_uploader("Upload any Image here", type=("png", "jpg","jpeg"))
+text_io = io.TextIOWrapper(img)
 if img is not None:
     imag = Image.open(img)
     st.image(imag,use_column_width=True)
